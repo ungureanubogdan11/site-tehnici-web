@@ -3,7 +3,7 @@ body {
     --yellow: #FFCA59;
     margin: 0;
     background-color: #575756;
-    background: url(resources/bg.jpg) fixed 100% 100%; 
+    background: url(resources/bg.jpg) fixed 50% 50%; 
     background-repeat: repeat-x;
 }
 
@@ -16,7 +16,95 @@ header {
     justify-content: center;
     align-items: center;
     align-content: space-between;
+    overflow: visible;
     
+}
+
+.animatie {
+    margin-top: 17vh;
+    display: flex;
+    justify-content: center;
+}
+
+.pa {
+    height: 20vh;
+}
+
+#img1 {
+    transform: rotate(-6deg);
+    animation: kchow1 3s linear 1s infinite;
+    margin-left: 48vw;
+    z-index: 5;
+}
+
+#img2 {
+    opacity: 0;
+    animation: kchow2 3s linear 1s infinite;
+    transform: translateX(-17vw);
+    z-index: 5;
+}
+
+#lumina {
+    opacity: 0;
+    display: inline-block;
+    z-index: 10;
+    transform: translate(-30vw, 0.75vw) scale(80%);
+    animation: kchow3 3s linear 1s infinite;
+}
+
+#text {
+    display: inline-block;
+    z-index: 4;
+    opacity: 0;
+    transform: translate(-51vw, -5.5vw) rotate(-10deg);
+    animation: kchow2 3s linear 1s infinite;
+}
+
+@keyframes kchow1 {
+    0% { opacity: 0; }
+    20% { opacity: 0; }
+    21% {opacity: 1;}
+}
+
+@keyframes kchow2 {
+    0% { opacity: 1;
+    }
+    20% { opacity: 1; }
+    21% { opacity: 0; }
+}
+
+@keyframes kchow3 {
+    0% { opacity: 90%; }
+    20% { opacity: 90%; }
+    21% {opacity: 0;}
+}
+
+
+.line {
+    background-color: var(--yellow);
+    height: 0.5vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 2vw;
+}
+
+.dropdown {
+    position: relative;
+    /* margin-left: 10vw; */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+}
+
+.dropdown:hover > .dropdown-content {
+    display: block;
+}
+
+#logo {
+    height: 8vh;
+    margin-left: 3.5vw;
 }
 
 footer {
@@ -35,11 +123,16 @@ footer {
     height: 10vh;
     width: 100vw;
     background-color: var(--red);
-    
+}
+
+.meniu > nav {
+    width: 100%;
+    height: 100%;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-evenly;
-    column-gap: 15vw;
+    column-gap: 30vw;
+    overflow: visible;
 }
 
 nav {
@@ -49,7 +142,6 @@ nav {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    justify-self: right;
 }
 
 .link {
@@ -80,6 +172,7 @@ h1 {
     border: 2px solid var(--yellow);
     border-radius: 5%;
     transition: 0.2s;
+    overflow: scroll;
 }
 
 .title {
@@ -100,12 +193,6 @@ h1 {
 #mater > a > img {
     height: 20vh;
     width: 15vw;
-}
-
-#logo {
-    padding-left: 3vw;
-    padding-right: 12vw;
-    height: 8vh;
 }
 
 p, h2, h3 {
@@ -135,8 +222,8 @@ p, h2, h3 {
 }
 
 @font-face {
-    font-family: magneto;
-    src: url("resources/magneto.ttf");
+    font-family: bangers;
+    src: url("resources/bangers.ttf");
 }
 
 @font-face {
@@ -155,13 +242,22 @@ p, h3, h4, a {
 
 h1, h2{
     color: var(--yellow);
-    font-family: magneto;
+    font-family: bangers;
     padding-left: 50px;
 }
 
 .link {
+    display: block;
+    width: 8vw;
+    border: 1px solid var(--yellow);
+    background-color: var(--red);
     color: var(--yellow);
-    font-family: magneto;
+    padding: 10px 10px;
+    font-family: bangers;
+}
+
+.link:hover {
+    filter: brightness(150%);
 }
 
 .poster {
@@ -208,7 +304,7 @@ h1, h2{
     align-items: center;
 }
 
-@media (orientation: landscape) and (max-width: 80em) {
+@media (orientation: landscape) and (max-width: 70em) {
     .bonus {
         display: none;
     }
@@ -237,7 +333,7 @@ h1, h2{
     }
 }
 
-@media (orientation: landscape) and (max-width: 50em) {
+@media (orientation: landscape) and (max-width: 40em) {
     .bonus, .title, #kachow {
         display: none;
     }
@@ -267,7 +363,28 @@ h1, h2{
     }
 }
 
-@media (orientation: portrait) and (max-width: 50em) {
+@media (orientation: portrait){
+    .meniu > nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .dropdown {
+        margin-bottom: 4vh;
+        margin-left: 3vh;
+    }
+    #logo {
+        margin-right: 3vw;
+        margin-bottom: 4vh;
+    }
+    .link {
+        width: 25vw;
+    }
+    .line {
+        height: 0.6vh;
+        width: 10vw;
+    }
     .meniu {
         position: static;
         height: 12vh;
@@ -325,8 +442,20 @@ h1, h2{
         width: 60vw;
         height: 20vh;
     }
+    #img1 {
+        transform: translate(80vw, 0) rotate(-6deg);
+    }
+    #img2 {
+        transform: translate(0, 0);
+    }
+    #lumina {
+        transform: translate(-51vw, 2vh);
+    }
+    #text {
+        transform: translate(-150vw, -11vh) rotate(-10deg);
+    }
 }
-
+/* 
 @media (min-width: 140em) {
     p {
         font-size: 2vh;
@@ -339,4 +468,10 @@ h1, h2{
 
     }
 
+} */
+
+@media (prefers-reduced-motion: reduce) {
+    #lumina {
+        opacity: 0 !important;
+    }
 }
