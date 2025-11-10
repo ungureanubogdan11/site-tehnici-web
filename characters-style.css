@@ -177,7 +177,7 @@ h1 {
     src: url("resources/work-sans.ttf");
 }
 
-.movie {
+.character {
     padding-left: 3vw;
     padding-right: 3vw;
     /* flex-direction: column; */
@@ -240,7 +240,7 @@ h2 {
     padding-left: 50px;
 }
 
-#second, #third {
+#mater, #doc, #sally {
     margin-bottom: 15vh;
 }
 
