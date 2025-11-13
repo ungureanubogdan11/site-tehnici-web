@@ -180,19 +180,14 @@ h1 {
     font-size: large;
 }
 
-.poza {
+.poza, #doc > a > img {
     padding-top: 10px;
-    height: 20vh;
     width: 18vw;
 }
 
-#doc > a > img {
-    height: 18vh;
-    width: 18vw;
-}
 
 #mater > a > img {
-    height: 20vh;
+    /* height: 20vh; */
     width: 15vw;
 }
 
@@ -439,9 +434,14 @@ h1, h2{
         width: 80vw;
         height: 40vh;
     }
-    .poster, .poza, #doc > a > img, #mater > a > img {
+    .poster, .poza, #mater > a > img {
         width: 60vw;
-        height: 20vh;
+        height: auto;
+        /* height: 20vh; */
+    }
+    #doc > a > img {
+        height: 12vh;
+        width: auto;
     }
     #img1 {
         transform: translate(80vw, 0) rotate(-6deg);
